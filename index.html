@@ -112,7 +112,34 @@
             <li><a href="https://tspsc.gov.in" target="_blank">29. TSPSC Official</a></li>
             <li><a href="https://www.india.gov.in" target="_blank">30. National Portal of India</a></li>
         </ul>
+<div class="container" style="margin-top: 20px; border: 2px dashed #003366; padding: 20px; background-color: #f9f9f9; border-radius: 10px;">
+    <h2 style="color: #003366;">Document Checklist Tool</h2>
+    <label for="doc-select">Kaunsa Document banana hai?</label><br>
+    <select id="doc-select" onchange="showDocs()" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px;">
+        <option value="">--Select Karein--</option>
+        <option value="pan">PAN Card</option>
+        <option value="aadhaar">Aadhaar Card</option>
+        <option value="voter">Voter ID</option>
+    </select>
+    <div id="result" style="margin-top: 15px; font-weight: bold; color: #333; line-height: 1.6;"></div>
+</div>
 
+<script>
+    function showDocs() {
+        var val = document.getElementById("doc-select").value;
+        var res = document.getElementById("result");
+        
+        if(val == "pan") {
+            res.innerHTML = "Zaroori Documents:<br>• Aadhaar Card<br>• Passport Size Photo<br>• Signature<br>• Address Proof (Aadhar/Voter ID)<br>• DOB Proof (10th Cert/Birth Cert)";
+        } else if(val == "aadhaar") {
+            res.innerHTML = "Zaroori Documents:<br>• Birth Certificate / 10th Marks card<br>• Address Proof (Electricity bill/Bank Passbook)";
+        } else if(val == "voter") {
+            res.innerHTML = "Zaroori Documents:<br>• Identity Proof (Aadhar/PAN)<br>• Address Proof (Bill/Gas connection)<br>• Passport size photo<br>• DOB Proof (10th Marks card)";
+        } else {
+            res.innerHTML = "";
+        }
+    }
+</script>
 </html>
 
 <div class="box">
