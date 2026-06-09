@@ -1,89 +1,96 @@
-<script>
-    function showDocs() {
-        var val = document.getElementById("doc-select").value;
-        var res = document.getElementById("result");
-        
-        if(val == "pan") {
-            res.innerHTML = "Zaroori Documents:<br>• Aadhaar Card<br>• Passport Size Photo<br>• Signature<br>• Address Proof (Aadhar/Voter ID)<br>• DOB Proof (10th Cert/Birth Cert)";
-        } else if(val == "aadhaar") {
-            res.innerHTML = "Zaroori Documents:<br>• Birth Certificate / 10th Marks card<br>• Address Proof (Electricity bill/Bank Passbook)";
-        } else if(val == "voter") {
-            res.innerHTML = "Zaroori Documents:<br>• Identity Proof (Aadhar/PAN)<br>• Address Proof (Bill/Gas connection)<br>• Passport size photo<br>• DOB Proof (10th Marks card)";
-        } else {
-            res.innerHTML = "";
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarkari Job Hub 2026</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 10px; }
+        header { background: #a52a2a; color: white; padding: 20px; text-align: center; border-radius: 5px; margin-bottom: 20px; }
+        .grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .box { background: white; flex: 1 1 300px; border: 2px solid #a52a2a; border-radius: 5px; margin-bottom: 10px; }
+        .box-title { background: #a52a2a; color: white; padding: 10px; font-weight: bold; text-align: center; }
+        .list, .link-list { padding: 10px; }
+        .list li, .link-list li { margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 5px; list-style: none; }
+        .list li a, .link-list li a { color: blue; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div style="background-color: #0056b3; color: #ffffff; padding: 12px; font-weight: bold; border-bottom: 4px solid #003366; border-radius: 5px; margin-bottom: 10px;">
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            🚨 LIVE UPDATES: Naye Sarkari Form Live! | PAN Card & Aadhaar Correction Link Active | Latest Job Notifications Available Below! 🚨
+        </marquee>
+    </div>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="🔍 Yahan search karein..." style="width: 80%; padding: 12px; border: 2px solid #0056b3; border-radius: 5px; font-size: 16px;">
+    </div>
+
+    <header><h1>Sarkari Job Hub 2026</h1></header>
+
+    <div class="grid" id="main-content">
+        <div class="box">
+            <div class="box-title">Important Official Links</div>
+            <ul class="link-list">
+                <li><a href="https://ssc.gov.in" target="_blank">SSC Official Website</a></li>
+                <li><a href="https://upsc.gov.in" target="_blank">UPSC Official Website</a></li>
+                <li><a href="https://ctet.nic.in" target="_blank">CTET Official Website</a></li>
+                <li><a href="https://uppbpb.gov.in" target="_blank">UP Police Official</a></li>
+                <li><a href="https://www.indiapost.gov.in" target="_blank">India Post GDS</a></li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <div class="box-title">Answer Key</div>
+            <ul class="list">
+                <li><a href="https://ssc.gov.in" target="_blank">SSC CGL Answer Key 2026</a></li>
+                <li><a href="https://upsssc.gov.in" target="_blank">UPSSSC PET Answer Key 2026</a></li>
+                <li><a href="https://rrbcdg.gov.in" target="_blank">RRB NTPC Answer Key</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box" style="margin-top: 20px; border: 2px dashed #003366; background-color: #f9f9f9;">
+        <div class="box-title">Document Checklist Tool</div>
+        <div class="list">
+            <select id="doc-select" onchange="showDocs()" style="width: 100%; padding: 10px; border-radius: 5px;">
+                <option value="">--Select Karein--</option>
+                <option value="pan">PAN Card</option>
+                <option value="aadhaar">Aadhaar Card</option>
+                <option value="voter">Voter ID</option>
+            </select>
+            <div id="result" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+        </div>
+    </div>
+
+    <script>
+        function searchFunction() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    links[i].parentElement.style.display = "";
+                } else {
+                    links[i].parentElement.style.display = "none";
+                }
+            }
         }
-    }
-</script>
-</html>
 
-<div class="box">
-    <div class="box-title">Answer Key</div>
-    <ul class="list">
-        <li><a href="https://ssc.gov.in" target="_blank">SSC CGL Answer Key 2026</a></li>
-        <li><a href="https://ssc.gov.in" target="_blank">SSC CHSL Answer Key 2026</a></li>
-        <li><a href="https://ssc.gov.in" target="_blank">SSC MTS Answer Key 2026</a></li>
-        <li><a href="https://upsssc.gov.in" target="_blank">UPSSSC PET Answer Key 2026</a></li>
-        <li><a href="https://upsssc.gov.in" target="_blank">UPSSSC Junior Engineer Answer Key</a></li>
-        <li><a href="https://ctet.nic.in" target="_blank">CTET Answer Key 2026</a></li>
-        <li><a href="https://ntanet.nic.in" target="_blank">UGC NET Answer Key 2026</a></li>
-        <li><a href="https://nta.ac.in" target="_blank">CSIR NET Answer Key 2026</a></li>
-        <li><a href="https://rrbcdg.gov.in" target="_blank">RRB NTPC Answer Key</a></li>
-        <li><a href="https://rrbcdg.gov.in" target="_blank">RRB Group D Answer Key</a></li>
-        <li><a href="https://www.joinindiannavy.gov.in" target="_blank">Indian Navy INCET Answer Key</a></li>
-        <li><a href="https://ibps.in" target="_blank">IBPS PO Answer Key</a></li>
-        <li><a href="https://ibps.in" target="_blank">IBPS Clerk Answer Key</a></li>
-        <li><a href="https://www.sbi.co.in" target="_blank">SBI PO Answer Key</a></li>
-        <li><a href="https://www.sbi.co.in" target="_blank">SBI Clerk Answer Key</a></li>
-        <li><a href="https://www.drdo.gov.in" target="_blank">DRDO CEPTAM Answer Key</a></li>
-        <li><a href="https://www.isro.gov.in" target="_blank">ISRO Assistant Answer Key</a></li>
-        <li><a href="https://bpsc.bih.nic.in" target="_blank">BPSC TRE Answer Key</a></li>
-        <li><a href="https://rpsc.rajasthan.gov.in" target="_blank">RPSC Teacher Answer Key</a></li>
-        <li><a href="https://upmsp.edu.in" target="_blank">UP Board Answer Key 2026</a></li>
-    </ul>
-</div>
-
-<script>
-    function showDocs() {
-        var val = document.getElementById("doc-select").value;
-        var res = document.getElementById("result");
-        
-        if(val == "pan") {
-            res.innerHTML = "Zaroori Documents:<br>• Aadhaar Card<br>• Passport Size Photo<br>• Signature<br>• Address Proof (Aadhar/Voter ID)<br>• DOB Proof (10th Cert/Birth Cert)";
-        } else if(val == "aadhaar") {
-            res.innerHTML = "Zaroori Documents:<br>• Birth Certificate / 10th Marks card<br>• Address Proof (Electricity bill/Bank Passbook)";
-        } else if(val == "voter") {
-            res.innerHTML = "Zaroori Documents:<br>• Identity Proof (Aadhar/PAN)<br>• Address Proof (Bill/Gas connection)<br>• Passport size photo<br>• DOB Proof (10th Marks card)";
-        } else {
-            res.innerHTML = "";
+        function showDocs() {
+            var val = document.getElementById("doc-select").value;
+            var res = document.getElementById("result");
+            if(val == "pan") {
+                res.innerHTML = "Zaroori Documents:<br>• 1. Aadhaar Card<br>• 2. Passport Size Photo<br>• 3. Signature<br>• 4. Address Proof<br>• 5. DOB Proof (10th Cert)";
+            } else if(val == "aadhaar") {
+                res.innerHTML = "Zaroori Documents:<br>• 1. Birth Certificate<br>• 2. Address Proof<br>• 3. Identity Proof<br>• 4. Mobile Number<br>• 5. Biometric Verification";
+            } else if(val == "voter") {
+                res.innerHTML = "Zaroori Documents:<br>• 1. Identity Proof (Aadhar/PAN)<br>• 2. Address Proof<br>• 3. Passport Size Photo<br>• 4. DOB Proof<br>• 5. Family Member Voter ID";
+            } else {
+                res.innerHTML = "";
+            }
         }
-    }
-</script>
+    </script>
+</body>
 </html>
-
-<div class="box">
-    <div class="box-title">Answer Key</div>
-    <ul class="list">
-        <li><a href="https://ssc.gov.in" target="_blank">SSC CGL Answer Key 2026</a></li>
-        <li><a href="https://ssc.gov.in" target="_blank">SSC CHSL Answer Key 2026</a></li>
-        <li><a href="https://ssc.gov.in" target="_blank">SSC MTS Answer Key 2026</a></li>
-        <li><a href="https://upsssc.gov.in" target="_blank">UPSSSC PET Answer Key 2026</a></li>
-        <li><a href="https://upsssc.gov.in" target="_blank">UPSSSC Junior Engineer Answer Key</a></li>
-        <li><a href="https://ctet.nic.in" target="_blank">CTET Answer Key 2026</a></li>
-        <li><a href="https://ntanet.nic.in" target="_blank">UGC NET Answer Key 2026</a></li>
-        <li><a href="https://nta.ac.in" target="_blank">CSIR NET Answer Key 2026</a></li>
-        <li><a href="https://rrbcdg.gov.in" target="_blank">RRB NTPC Answer Key</a></li>
-        <li><a href="https://rrbcdg.gov.in" target="_blank">RRB Group D Answer Key</a></li>
-        <li><a href="https://www.joinindiannavy.gov.in" target="_blank">Indian Navy INCET Answer Key</a></li>
-        <li><a href="https://ibps.in" target="_blank">IBPS PO Answer Key</a></li>
-        <li><a href="https://ibps.in" target="_blank">IBPS Clerk Answer Key</a></li>
-        <li><a href="https://www.sbi.co.in" target="_blank">SBI PO Answer Key</a></li>
-        <li><a href="https://www.sbi.co.in" target="_blank">SBI Clerk Answer Key</a></li>
-        <li><a href="https://www.drdo.gov.in" target="_blank">DRDO CEPTAM Answer Key</a></li>
-        <li><a href="https://www.isro.gov.in" target="_blank">ISRO Assistant Answer Key</a></li>
-        <li><a href="https://bpsc.bih.nic.in" target="_blank">BPSC TRE Answer Key</a></li>
-        <li><a href="https://rpsc.rajasthan.gov.in" target="_blank">RPSC Teacher Answer Key</a></li>
-        <li><a href="https://upmsp.edu.in" target="_blank">UP Board Answer Key 2026</a></li>
-    </ul>
-</div>
-
-
