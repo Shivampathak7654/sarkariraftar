@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* CSS Settings */
+        body { font-family: sans-serif; margin: 0; padding: 10px; }
+        .container { width: 100%; max-width: 500px; margin: 0 auto; }
+        
+        .job-row { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            margin-bottom: 10px; 
+            border-radius: 8px; 
+        }
+        
+        .btn-green { 
+            background-color: #28a745; 
+            color: white; 
+            padding: 10px 15px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Mobile ke liye special setting */
+        @media (max-width: 600px) {
+            .job-row { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 10px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center;">THINKING ABOUT A NEW JOB?</h2>
+
+        <div class="job-row">
+            <span>PART - TIME</span>
+            <a href="shift.html" class="btn-green">KNOW MORE</a>
+        </div>
+
+        <div class="job-row">
+            <span>FULL - TIME</span>
+            <a href="shift.html" class="btn-green">KNOW MORE</a>
+        </div>
+
+        <div class="job-row">
+            <span>SEASONAL JOBS</span>
+            <a href="#" class="btn-green">KNOW MORE</a>
+        </div>
+    </div>
+
+</body>
+</html>
